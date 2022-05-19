@@ -29,12 +29,14 @@
 			justify-content: center;
 			align-items: center;
 			animation: ok 0.125s linear infinite;
+			animation-play-state:paused;
 		}
 		@keyframes ok{
 			0%{background-position: 200px 0;}
 		}
 		img{
 			animation: car 8s linear infinite;
+			animation-play-state:paused;
 		}
 		@keyframes car{
 			0%{
@@ -106,9 +108,10 @@
 <body>
 <div class="road"><div class="line" id="line"><img src="car.png" width="300px" id="car"></div></div><br><br>
 <div class="down">
+		<button class="start" onclick="document.getElementById('line').style.animationPlayState = 'running'; document.getElementById('car').style.animationPlayState = 'running'">Start </button>
+
 	<button class="stop" onclick="document.getElementById('line').style.animationPlayState = 'paused'; document.getElementById('car').style.animationPlayState = 'paused' " >
 						Stop</button>
-	<button class="start" onclick="document.getElementById('line').style.animationPlayState = 'running'; document.getElementById('car').style.animationPlayState = 'running'">Start </button>
 </div>
 </body>
 </html>
